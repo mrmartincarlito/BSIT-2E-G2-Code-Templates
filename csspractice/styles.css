@@ -10,3 +10,14 @@ h1 {
 .anchor:hover {
     font-size: 100px;
 }
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        color:red;
+        margin-top: 50px;
+    }
+
+    .image {
+        display: none;
+    }
+}
