@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <h1 id="notification"></h1>
+        Username: <input id="username" type="text" placeholder="Username" /> <br/ >
+        Password: <input id="password" type="password" placeholder="Password" /> <br/ >
+        <button onclick="login()">Login</button>
+        <br/>
+        Email: <input type="email" />
+        Number: <input type="number" /> <br/ >
+        gender
+        <input name="gender" type="radio" value="boy"/> Boy <input name="gender" type="radio" value="girl" /> Girl
+        <br/>
+
+        Hobbies
+        <input name="hobbies" type="checkbox" /> Reading <br/>
+        <input name="hobbies" type="checkbox" /> Traveling <br/>
+        <input name="hobbies" type="checkbox" /> Swimming <br/>
+        <br/>
+
+        Date
+        <input type="date" /> <br/>
+        <textarea placeholder="Your address"></textarea> <br/>
+        
+        <select>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>Canada</option>
+            </select>
+    </body>
+    <script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "admin123") {
+                let notification = document.getElementById("notification");
+                notification.innerText = "Login Successful";
+                notification.style.color = "green";
+            } else {
+                let notification = document.getElementById("notification");
+                notification.innerText = "Invalid Credentials";
+                notification.style.color = "red";
+            }
+
+            let gender = document.querySelector('input[name="gender"]:checked');
+            if (gender) {
+                alert("Selected gender: " + gender.value);
+            }
+
+            let hobbies = document.querySelectorAll('input[name="hobbies"]:checked');
+            console.log("Selected hobbies:");
+            hobbies.forEach((hobby) => {
+                console.log(hobby.nextSibling.textContent.trim());
+            });
+        }
+    </script>
+</html>
