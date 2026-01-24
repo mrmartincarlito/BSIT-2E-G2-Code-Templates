@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Practice</title>
+    </head>
+    <body>
+        <button onclick="clickMe()">Click Me</button>
+        <br />
+        <label onmouseover="over()" onmouseout="out()">SAMPLE</label>
+        <br />
+        <button onclick="logout()">Logout</button>
+        
+    </body>
+    <script>
+        function logout() {
+            let confirmLogout = confirm("Are you sure you want to logout?");
+            if (confirmLogout) {
+                let promptReason = prompt("Please type YES to confirm logout:");
+                
+                if (promptReason === "YES") {
+                    alert("You have been logged out.");
+                } else {
+                    alert("Logout cancelled.");
+                }
+            } else {
+                alert("Logout cancelled.");
+            }
+        }
+        function clickMe() {
+            alert("I am clicked")
+        }
+
+        function over() {
+            console.log("Mouse is over")
+        }
+
+        function out() {
+            console.log("Mouse is out")
+        }
+    </script>
+</html>
